@@ -295,7 +295,6 @@ class NeuronModel(object):
         ax.set_title('Model graph', weight='bold')
 
         fig.tight_layout()
-        print(self._graph)
         plt.show()
 
     @property
