@@ -263,7 +263,7 @@ class NeuronModel(object):
 
     def as_graph(self, fontsize=10, fontcolor='white', scale_nodes=1,
                  color_soma='#4C6C92', color_dendrites='#A7361C', alpha=1,
-                 scale_edges=1):
+                 scale_edges=1, seed=None):
         import matplotlib.pyplot as plt
         import networkx as nx
 
@@ -282,7 +282,8 @@ class NeuronModel(object):
         for d in ['right', 'top', 'left', 'bottom']:
             ax.spines[d].set_visible(False)
         pos = nx.spring_layout(G, fixed=soma, pos={soma[0]: (0, 0)},
-                               k=0.05*scale_edges, iterations=100)
+                               k=0.05*scale_edges, iterations=100,
+                               seed=seed)
         nx.draw_networkx_nodes(G, pos, nodelist=dendrites,
                                node_color=color_dendrites,
                                node_size=1200*scale_nodes, margins=0.1,
