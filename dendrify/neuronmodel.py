@@ -262,7 +262,7 @@ class NeuronModel(object):
         exec(executable, self._varscope)
 
     def as_graph(self, fontsize=10, fontcolor='white', scale_nodes=1,
-                 color_soma='#4C6C92', color_dendrites='#A7361C', alpha=1,
+                 color_soma='#A7361C', color_dendrites='#4C6C92', alpha=1,
                  scale_edges=1, seed=None):
         import matplotlib.pyplot as plt
         import networkx as nx
