@@ -51,7 +51,7 @@ library = {
                 'ds_NMDA_{1}_{0}/dt = -s_NMDA_{1}_{0} / t_NMDA_rise_{1}_{0}  :1'),
     
     # Random white noise equations:
-    'noise': 'dI_noise_{0}/dt = (mean_noise_{0}-I_noise_{0}) / tau_noise_{0} + sigma_noise_{0} * (sqrt(2/tau_noise_{0}) * xi_{0}) :amp',
+    'noise': 'dI_noise_{0}/dt = (mean_noise_{0}-I_noise_{0}) / tau_noise_{0} + sigma_noise_{0} * (sqrt(2/(tau_noise_{0}*dt)) * randn()) :amp',
 
     'condition_I_Na': 'V_{0} > Vth_Na_{0} and allow_I_Na_{0} and t > timer_Na_{0} + refractory_Na',
 
