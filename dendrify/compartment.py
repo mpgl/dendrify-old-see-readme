@@ -80,11 +80,13 @@ _connections: list
 
 
 import sys
+
 import brian2
 import numpy as np
-from .equations import library
-from .ephysproperties import EphysProperties
 from brian2.units import ms, pA
+
+from .ephysproperties import EphysProperties
+from .equations import library
 
 
 class Compartment:
@@ -339,7 +341,7 @@ class Soma(Compartment):
                f"{'-'*45}\n\n"
                f"USER PARAMETERS:\n\n{ephys}"
                f"\n{'-'*45}\n\n"
-                "PROPERTIES: \n\n"
+               "PROPERTIES: \n\n"
                f"\u2192 equations:\n   {equations}\n\n"
                f"\u2192 parameters:\n{parameters}\n")
         return msg
@@ -362,7 +364,7 @@ class Dendrite(Compartment):
             Description
         """
         ephys_dict = self._ephys_object.__dict__
-        
+
         ephys = '\n'.join([f"\u2192 {i}:\n    [{ephys_dict[i]}]\n"
                            for i in ephys_dict])
 
@@ -380,7 +382,7 @@ class Dendrite(Compartment):
                f"{'-'*45}\n\n"
                f"USER PARAMETERS:\n\n{ephys}"
                f"\n{'-'*45}\n\n"
-                "PROPERTIES: \n\n"
+               "PROPERTIES: \n\n"
                f"\u2192 equations:\n    {equations}\n\n"
                f"\u2192 events:\n{events}\n\n"
                f"\u2192 parameters:\n{parameters}\n")
@@ -429,7 +431,8 @@ class Dendrite(Compartment):
         if not self._event_actions:
             self._event_actions = library['run_on_Na_spike'].format(tag)
         else:
-            self._event_actions += "\n" + library['run_on_Na_spike'].format(tag)
+            self._event_actions += "\n" + \
+                library['run_on_Na_spike'].format(tag)
         # Include params needed
         if not self._params:
             self._params = {}
@@ -472,7 +475,8 @@ class Dendrite(Compartment):
         if not self._event_actions:
             self._event_actions = library['run_on_Ca_spike'].format(tag)
         else:
-            self._event_actions += "\n" + library['run_on_Ca_spike'].format(tag)
+            self._event_actions += "\n" + \
+                library['run_on_Ca_spike'].format(tag)
         # Include params needed
         if not self._params:
             self._params = {}

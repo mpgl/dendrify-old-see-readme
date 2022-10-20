@@ -42,7 +42,7 @@ class EphysProperties(object):
         """
         Returns the surface area a of a compartment (open cylinder) based
         on its length and diameter.
-        
+
         Returns
         -------
         TYPE
@@ -84,7 +84,7 @@ class EphysProperties(object):
     @property
     def parameters(self):
         """Summary
-        
+
         Returns
         -------
         TYPE
@@ -139,14 +139,14 @@ class EphysProperties(object):
         The conductance (of coupling currents) between the centers of
         two adjacent cylindrical compartments, based on their dimensions
         and the axial resistance.
-        
+
         Parameters
         ----------
         comp1 : TYPE
             Description
         comp2 : TYPE
             Description
-        
+
         Returns
         -------
         TYPE

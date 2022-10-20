@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Fig2-notebook.ipynb
+.vscode/settings.json
+revisions/test_integration.py
